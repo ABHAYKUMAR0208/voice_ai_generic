@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main id="main" ref={ref}>
       <Hero />
-      <VelocityMarquee label={TRUST.label} items={TRUST.names} />
+      <VelocityMarquee label={TRUST.label} items={TRUST.sectors} />
       <Statement />
       <NightShift />
       <FlowSteps />

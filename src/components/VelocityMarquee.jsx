@@ -41,13 +41,25 @@ export default function VelocityMarquee({ label, items }) {
     { scope: ref }
   );
 
+  // Items can be plain strings (rendered as text) or { name, Icon, color } (rendered as an icon tile).
   const row = (copy) =>
-    items.map((item) => (
-      <Fragment key={`${copy}-${item}`}>
-        <span className="vmarquee__item">{item}</span>
-        <span className="vmarquee__sep" aria-hidden="true" />
-      </Fragment>
-    ));
+    items.map((item) => {
+      const name = typeof item === "string" ? item : item.name;
+      const { Icon, color } = typeof item === "string" ? {} : item;
+      return (
+        <Fragment key={`${copy}-${name}`}>
+          {Icon ? (
+            <span className="vmarquee__icon" style={{ "--tile": color }} title={name}>
+              <Icon size={34} strokeWidth={1.6} aria-hidden="true" />
+              <span className="sr-only">{name}</span>
+            </span>
+          ) : (
+            <span className="vmarquee__item">{name}</span>
+          )}
+          <span className="vmarquee__sep" aria-hidden="true" />
+        </Fragment>
+      );
+    });
 
   return (
     <section className="vmarquee" ref={ref} aria-label={label}>

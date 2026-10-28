@@ -1874,6 +1874,94 @@
   text-transform: uppercase;
   opacity: 0.8;
 }
+.integ-chip__icon {
+  flex-shrink: 0;
+  color: var(--orange-ink);
+}
+.integ-chip--live .integ-chip__icon {
+  color: var(--teal-deep);
+}
+/* Brand logo tiles — logos always sit on white so every brand colour reads correctly */
+.integ-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  height: 3.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  background: #fff;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
+}
+.integ-logo img {
+  display: block;
+  height: 2rem;
+  width: auto;
+  max-width: 8.5rem;
+  object-fit: contain;
+}
+.integ-logo--wide img {
+  height: 1.5rem;
+}
+.integ-logo:hover {
+  transform: translateY(-2px);
+  border-color: rgba(28, 35, 51, 0.28);
+  box-shadow: 0 12px 24px -16px rgba(28, 35, 51, 0.35);
+}
+.integ-logo--live {
+  border-color: rgba(46, 143, 130, 0.55);
+  box-shadow: 0 0 0 3px rgba(46, 143, 130, 0.12);
+}
+.integ-logo__live {
+  position: absolute;
+  top: -0.55rem;
+  right: -0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: var(--r-pill);
+  background: var(--teal-deep);
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.integ-logo__live .integ-chip__dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  background: #7ee0d2;
+}
+/* Name tooltip on hover / keyboard focus */
+.integ-logo::after {
+  content: attr(data-name);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  translate: -50% 4px;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.4rem;
+  background: var(--ink);
+  color: var(--ink-fg);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s, translate 0.2s;
+  z-index: 2;
+}
+.integ-logo:hover::after {
+  opacity: 1;
+  translate: -50% 0;
+}
+.integ-card__list {
+  align-items: center;
+}
+
 .integ__note {
   max-width: 46rem;
   margin-top: 1.75rem;

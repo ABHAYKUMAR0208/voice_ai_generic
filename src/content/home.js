@@ -1,5 +1,21 @@
 import {
+  Banknote,
+  Boxes,
   Building2,
+  Car,
+  Database,
+  Hotel,
+  House,
+  Link2,
+  Mail,
+  MessageSquareText,
+  MousePointerClick,
+  PhoneCall,
+  Plane,
+  ShoppingCart,
+  Smartphone,
+  Stethoscope,
+  Webhook,
   CalendarCheck,
   BellRing,
   ConciergeBell,
@@ -51,17 +67,18 @@ export const HERO = {
 
 export const TRUST = {
   label: "One voice agent, configured for every industry",
-  names: [
-    "Hospitality",
-    "Healthcare",
-    "Education & Training",
-    "E-commerce & Retail",
-    "Banking & Insurance",
-    "Real Estate",
-    "Travel & Transport",
-    "Logistics",
-    "Public Services",
-    "Automotive",
+  // Rendered as icons in the marquee; names are kept for screen readers and tooltips.
+  sectors: [
+    { name: "Hospitality", Icon: Hotel, color: "#e0712f" },
+    { name: "Healthcare", Icon: Stethoscope, color: "#c2407a" },
+    { name: "Education & Training", Icon: GraduationCap, color: "#4450b0" },
+    { name: "E-commerce & Retail", Icon: ShoppingCart, color: "#2e8f82" },
+    { name: "Banking & Insurance", Icon: Banknote, color: "#d99a2b" },
+    { name: "Real Estate", Icon: House, color: "#e0712f" },
+    { name: "Travel & Transport", Icon: Plane, color: "#4450b0" },
+    { name: "Logistics", Icon: Truck, color: "#2e8f82" },
+    { name: "Public Services", Icon: Landmark, color: "#c2407a" },
+    { name: "Automotive", Icon: Car, color: "#d99a2b" },
   ],
 };
 
@@ -130,7 +147,7 @@ export const INSIDE_CALL = {
     {
       tag: "Straight to your systems",
       title: "The call becomes the record.",
-      body: "Appointments, orders, tickets and enquiries land in your CRM while the caller is still on the line — HubSpot today; Salesforce, Zoho or another CRM on request. The caller gets a confirmation by SMS and email.",
+      body: "Appointments, orders, tickets and enquiries land in your CRM while the caller is still on the line — HubSpot today; Salesforce, Microsoft Dynamics or another CRM on request. The caller gets a confirmation by SMS and email.",
       points: ["Bookings, orders, tickets, payment links and callbacks", "Complaints and urgent cases escalated to a person", "Nothing for your team to retype"],
     },
   ],
@@ -166,41 +183,65 @@ export const USE_CASES = {
   ],
 };
 
+const ICONIFY = "https://api.iconify.design";
+const FRESHWORKS_LOGO = "https://dam.freshworks.com/asset/4a736cb7-c1d8-4fba-8e1a-e4aa65d5ba5e/Freshworks-Logo.webp";
+
 export const INTEGRATIONS = {
   eyebrow: "Integrations",
   heading: "Plugs into the tools you already run.",
-  sub: "Every call ends as a record in your own systems. HubSpot is live today — Salesforce, Zoho and other CRMs connect through the same layer, so you never change tools to add a voice agent.",
+  sub: "Every call ends as a record in your own systems. HubSpot is live today — Salesforce, Microsoft Dynamics and other CRMs connect through the same layer, so you never change tools to add a voice agent.",
+  // Items with a `logo` render as a brand logo (name shown on hover / to screen readers).
+  // `wide: true` marks wordmark logos, which are drawn a little shorter than square marks.
   groups: [
     {
       label: "CRM",
       items: [
-        { name: "HubSpot", live: true },
-        { name: "Salesforce" },
-        { name: "Zoho CRM" },
-        { name: "Microsoft Dynamics 365" },
-        { name: "Pipedrive" },
-        { name: "Freshsales" },
+        { name: "HubSpot", logo: `${ICONIFY}/logos/hubspot.svg`, wide: true, live: true },
+        { name: "Salesforce", logo: `${ICONIFY}/logos/salesforce.svg` },
+        { name: "Microsoft Dynamics 365", logo: `${ICONIFY}/thesvg-color/microsoft-dynamics-365.svg` },
+        { name: "Freshsales", logo: FRESHWORKS_LOGO, wide: true },
       ],
     },
     {
       label: "Helpdesk & ticketing",
-      items: [{ name: "Zendesk" }, { name: "Freshdesk" }, { name: "ServiceNow" }, { name: "Jira Service Management" }],
+      items: [
+        { name: "Zendesk", logo: `${ICONIFY}/logos/zendesk.svg`, wide: true },
+        { name: "Freshdesk", logo: FRESHWORKS_LOGO, wide: true },
+        { name: "ServiceNow", logo: `${ICONIFY}/thesvg-color/servicenow.svg` },
+      ],
     },
     {
       label: "Calendars & booking",
-      items: [{ name: "Google Calendar" }, { name: "Microsoft 365 / Outlook" }, { name: "Calendly" }],
+      items: [
+        { name: "Google Calendar", logo: `${ICONIFY}/logos/google-calendar.svg` },
+        { name: "Microsoft 365 / Outlook", logo: `${ICONIFY}/thesvg-color/microsoft-outlook.svg` },
+        { name: "Calendly", logo: `${ICONIFY}/thesvg-color/calendly.svg` },
+      ],
     },
     {
       label: "Messaging & payments",
-      items: [{ name: "SMS", live: true }, { name: "Email", live: true }, { name: "Payment links", live: true }, { name: "WhatsApp" }],
+      items: [
+        { name: "SMS", Icon: MessageSquareText, live: true },
+        { name: "Email", Icon: Mail, live: true },
+        { name: "Payment links", Icon: Link2, live: true },
+        { name: "WhatsApp", logo: `${ICONIFY}/logos/whatsapp-icon.svg` },
+      ],
     },
     {
       label: "Phone & web",
-      items: [{ name: "Phone lines (SIP)", live: true }, { name: "Web call button", live: true }, { name: "Manager phones", live: true }],
+      items: [
+        { name: "Phone lines (SIP)", Icon: PhoneCall, live: true },
+        { name: "Web call button", Icon: MousePointerClick, live: true },
+        { name: "Manager phones", Icon: Smartphone, live: true },
+      ],
     },
     {
       label: "Your own stack",
-      items: [{ name: "REST APIs & webhooks" }, { name: "ERP / HIS / PMS" }, { name: "Custom databases" }],
+      items: [
+        { name: "REST APIs & webhooks", Icon: Webhook },
+        { name: "ERP / HIS / PMS", Icon: Boxes },
+        { name: "Custom databases", Icon: Database },
+      ],
     },
   ],
   note: "“Live” means in production today. Everything else is scoped with you during setup — if your system has an API, it can be connected.",
@@ -264,7 +305,7 @@ export const FAQ = {
     },
     {
       q: "Which CRMs and tools does it work with?",
-      a: "HubSpot is live today. Salesforce, Zoho CRM, Microsoft Dynamics, Pipedrive and other CRMs — plus helpdesks, calendars and your own systems — connect through the same layer, scoped with you during setup. If it has an API, it can be connected.",
+      a: "HubSpot is live today. Salesforce, Microsoft Dynamics and other CRMs — plus helpdesks, calendars and your own systems — connect through the same layer, scoped with you during setup. If it has an API, it can be connected.",
     },
     {
       q: "Can callers just dial a normal phone number?",

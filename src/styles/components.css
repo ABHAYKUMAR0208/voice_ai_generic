@@ -926,6 +926,32 @@
   background: var(--grad);
 }
 
+.vmarquee__icon {
+  --tile: var(--violet);
+  position: relative;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(4.25rem, 3.4rem + 3vw, 6rem);
+  height: clamp(4.25rem, 3.4rem + 3vw, 6rem);
+  margin-inline: clamp(1rem, 2vw, 2rem);
+  border-radius: 1.6rem;
+  color: var(--tile);
+  background:
+    radial-gradient(120% 120% at 20% 0%, color-mix(in srgb, var(--tile) 22%, transparent), transparent 70%),
+    color-mix(in srgb, var(--tile) 9%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--tile) 28%, transparent);
+  box-shadow: 0 18px 36px -24px color-mix(in srgb, var(--tile) 70%, transparent);
+  transition: transform 0.4s var(--ease-out);
+}
+.vmarquee__icon svg {
+  width: 46%;
+  height: 46%;
+}
+.vmarquee__icon:hover {
+  transform: translateY(-4px) rotate(-3deg);
+}
+
 /* ---- Inner-page hero ---- */
 .phero {
   position: relative;
