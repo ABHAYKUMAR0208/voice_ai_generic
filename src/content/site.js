@@ -3,9 +3,10 @@ export const BRAND = {
   product: "GIT Voice AI Agent",
   company: "GIT Software Technologies",
   agent: "Kelly",
-  logo: "/images/logo.png",
-  mark: "/images/logo-mark.png",
+  logo: `${import.meta.env.BASE_URL}images/logo.png`,
+  mark: `${import.meta.env.BASE_URL}images/logo-mark.png`,
 };
+
 
 export const NAV = [
   { to: "/", label: "Home" },

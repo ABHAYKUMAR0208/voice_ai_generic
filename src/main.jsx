@@ -1,3 +1,4 @@
+
 import "./styles/base.css";
 import "./styles/components.css";
 import { StrictMode } from "react";
@@ -7,7 +8,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/voice_ai_generic">
       <App />
     </BrowserRouter>
   </StrictMode>
