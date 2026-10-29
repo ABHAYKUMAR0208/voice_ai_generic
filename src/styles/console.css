@@ -48,7 +48,7 @@
   text-align: center;
 }
 .console__title {
-  font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.75rem);
+  font-size: clamp(2rem, 1.2rem + 1.8vw, 2.9rem);
   letter-spacing: -0.045em;
   line-height: 1;
 }

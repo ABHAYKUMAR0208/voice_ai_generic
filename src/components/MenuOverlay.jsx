@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { gsap, useGSAP, reducedMotion } from "../lib/gsap";
 import { useLenis } from "./SmoothScroll";
 import { TLink } from "./Transition";
-import { BRAND, CONTACT, MENU } from "../content/site";
+import { BRAND, MENU } from "../content/site";
 
 /**
  * Full-screen menu: the panel drops from the top with a rounded lower edge
@@ -27,7 +27,7 @@ export default function MenuOverlay({ open, onClose, returnFocusTo, time }) {
         .to(".menu__scrim", { opacity: 1, duration: fast ? 0.01 : 0.5, ease: "power2.out" }, 0)
         .fromTo(".menu__panel", { yPercent: -100 }, { yPercent: 0, duration: fast ? 0.01 : 0.95, ease: "expo.inOut" }, 0)
         .from(".menu__label", { yPercent: 115, duration: fast ? 0.01 : 1, stagger: 0.06 }, fast ? 0 : 0.45)
-        .from([".menu__index", ".menu__top > *", ".menu__bottom > *"], { opacity: 0, y: 12, duration: 0.6, stagger: 0.03 }, fast ? 0 : 0.55);
+        .from([".menu__index", ".menu__top > *"], { opacity: 0, y: 12, duration: 0.6, stagger: 0.03 }, fast ? 0 : 0.55);
     },
     { scope: root }
   );
@@ -92,16 +92,6 @@ export default function MenuOverlay({ open, onClose, returnFocusTo, time }) {
             ))}
           </ul>
         </nav>
-
-        <div className="shell menu__bottom">
-          <span className="t-mono">Agent online · {time}</span>
-          <a href={CONTACT.emailHref} tabIndex={open ? 0 : -1}>
-            {CONTACT.email}
-          </a>
-          <a href={CONTACT.phoneHref} tabIndex={open ? 0 : -1}>
-            {CONTACT.phone}
-          </a>
-        </div>
       </div>
     </div>
   );

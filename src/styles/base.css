@@ -199,32 +199,32 @@ h4 {
 /* ---- Type scale ---- */
 .t-display {
   font-family: var(--font-display);
-  font-size: clamp(2.9rem, 1.2rem + 6.6vw, 7.75rem);
-  line-height: 0.93;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  font-size: clamp(2.4rem, 1rem + 3.8vw, 5.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 .t-h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 1.2rem + 5.4vw, 6.25rem);
-  line-height: 0.95;
-  letter-spacing: -0.032em;
-  font-weight: 600;
+  font-size: clamp(2.25rem, 1rem + 3.2vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-weight: 500;
 }
 
 .t-h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 1.25rem + 3.4vw, 4.5rem);
-  line-height: 1;
-  letter-spacing: -0.028em;
-  font-weight: 600;
+  font-size: clamp(1.875rem, 1rem + 2.2vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.024em;
+  font-weight: 500;
   text-wrap: balance;
 }
 
 .t-h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.375rem, 1.05rem + 0.9vw, 2rem);
+  font-size: clamp(1.25rem, 1rem + 0.6vw, 1.625rem);
   line-height: 1.15;
   letter-spacing: -0.022em;
   font-weight: 500;

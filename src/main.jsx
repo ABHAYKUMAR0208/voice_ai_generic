@@ -8,7 +8,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/voice_ai_generic">
+    <BrowserRouter basename="/voice_ai_agent">
       <App />
     </BrowserRouter>
   </StrictMode>

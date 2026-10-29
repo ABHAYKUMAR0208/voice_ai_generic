@@ -27,10 +27,10 @@ export default function Home() {
       <Statement />
       <NightShift />
       <FlowSteps />
-      <InsideTheCall />
       <UseCaseGallery />
       <Integrations />
       <ConsoleTeaser />
+      <InsideTheCall />
       <Platform />
       <GoLive />
       <Stats />

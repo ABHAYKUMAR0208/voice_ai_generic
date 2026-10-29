@@ -464,12 +464,10 @@
   isolation: isolate;
 }
 .menu__glow {
+  /* Fills the panel instead of hanging off its edge, so it no longer makes the menu scrollable */
   position: absolute;
-  inset: auto -10% -30% auto;
-  width: 60vmax;
-  height: 60vmax;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(224, 113, 47, 0.22), transparent 62%);
+  inset: 0;
+  background: radial-gradient(circle 42vmax at 82% 105%, rgba(224, 113, 47, 0.22), transparent 62%);
   pointer-events: none;
   z-index: -1;
 }
@@ -477,7 +475,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-h);
+  min-height: var(--header-h);
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: 0.5rem;
 }
 .menu__nav {
   flex: 1;
@@ -492,7 +492,7 @@
   display: flex;
   align-items: baseline;
   gap: clamp(1rem, 2.5vw, 2.5rem);
-  padding-block: clamp(0.35rem, 1vw, 0.75rem);
+  padding-block: clamp(0.6rem, 1.2vw, 1rem);
   border-bottom: 1px solid var(--line);
 }
 .menu__index {
@@ -512,10 +512,10 @@
    CSS transform transition — the hover nudge lives on the mask instead. */
 .menu__label {
   display: block;
-  font-size: clamp(2.5rem, 1.4rem + 4.6vw, 5.5rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  font-size: clamp(1.5rem, 0.8rem + 2.3vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   color: var(--fg-2);
   transition: color 0.35s;
 }
