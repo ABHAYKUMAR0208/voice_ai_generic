@@ -12,6 +12,7 @@ import Solutions from "./pages/Solutions";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ConsoleGate from "./pages/ConsoleGate";
+import StaffRedirect from "./pages/StaffRedirect";
 
 // The console pulls in livekit-client, so keep it out of the marketing bundle
 // and warm it up once the first page is idle.
@@ -45,6 +46,8 @@ export default function App() {
             <Route path="/features" element={<Navigate to="/solutions" replace />} />
             <Route path="/about" element={<About />} />
             <Route path="/console" element={<ConsoleGate Console={Console} />} />
+            <Route path="/staff" element={<StaffRedirect />} />
+            <Route path="/dashboard" element={<StaffRedirect />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

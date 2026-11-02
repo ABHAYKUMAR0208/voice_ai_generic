@@ -64,9 +64,9 @@ export default function MenuOverlay({ open, onClose, returnFocusTo, time }) {
       <div className="menu__panel" data-lenis-prevent>
         <div className="menu__glow" aria-hidden="true" />
         <div className="shell menu__top">
-          <span className="brand">
+          <TLink to="/" className="brand" onClick={onClose} aria-label={`${BRAND.product} — home`}>
             <img className="brand__logo" src={BRAND.logo} alt={BRAND.name} width="203" height="63" />
-          </span>
+          </TLink>
           <button className="menu-btn" onClick={onClose}>
             <X size={14} strokeWidth={2.4} aria-hidden="true" />
             Close
@@ -75,21 +75,35 @@ export default function MenuOverlay({ open, onClose, returnFocusTo, time }) {
 
         <nav className="shell menu__nav" aria-label="Site">
           <ul className="menu__list">
-            {MENU.map((item, i) => (
-              <li key={item.to}>
-                <TLink
-                  to={item.to}
-                  className={`menu__item${item.to === pathname ? " is-active" : ""}`}
-                  onClick={onClose}
-                  tabIndex={open ? 0 : -1}
-                >
+            {MENU.map((item, i) => {
+              const inner = (
+                <>
                   <span className="menu__index">{String(i + 1).padStart(2, "0")}</span>
                   <span className="menu__label-mask">
                     <span className="menu__label">{item.label}</span>
                   </span>
-                </TLink>
-              </li>
-            ))}
+                </>
+              );
+              return (
+                <li key={item.to || item.href}>
+                  {item.href ? (
+                    // External app (e.g. the staff dashboard): a plain link, same tab.
+                    <a href={item.href} className="menu__item" tabIndex={open ? 0 : -1}>
+                      {inner}
+                    </a>
+                  ) : (
+                    <TLink
+                      to={item.to}
+                      className={`menu__item${item.to === pathname ? " is-active" : ""}`}
+                      onClick={onClose}
+                      tabIndex={open ? 0 : -1}
+                    >
+                      {inner}
+                    </TLink>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

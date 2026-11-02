@@ -5,7 +5,6 @@ import react from "@vitejs/plugin-react";
 
 // Local dev runs at http://localhost:5173/voice_ai_agent.
 // Production builds are served from GitHub Pages at /voice_ai_generic/ (the repo name).
-// Override the build path with VITE_BASE, e.g. VITE_BASE=/ npm run build for a site at the domain root.
 const DEV_BASE = "/voice_ai_agent/";
 const BUILD_BASE = process.env.VITE_BASE || "/voice_ai_generic/";
 

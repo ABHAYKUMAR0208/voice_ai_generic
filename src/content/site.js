@@ -1,3 +1,5 @@
+import { DASHBOARD_URL } from "../lib/config";
+
 export const BRAND = {
   name: "GIT Software Technologies",
   product: "GIT Voice AI Agent",
@@ -21,6 +23,7 @@ export const MENU = [
   { to: "/solutions", label: "Industries" },
   { to: "/about", label: "Company" },
   { to: "/console", label: "Live demo" },
+  { href: DASHBOARD_URL, label: "Staff login" },
 ];
 
 export const CONTACT = {
@@ -55,6 +58,7 @@ export const FOOTER = {
       links: [
         { to: "/about", label: "About GIT" },
         { href: "https://gitsoftwaretech.com", label: "gitsoftwaretech.com" },
+        { href: DASHBOARD_URL, label: "Staff login" },
       ],
     },
   ],
